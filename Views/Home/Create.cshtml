@@ -1,0 +1,110 @@
+﻿@model ClassicBookCollection.Models.BookTable_1
+@*Don't need IEnumerable*@
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<head>
+    <title>Add New</title>
+    <link href="~/Content/createStyle.css" rel="stylesheet" />
+
+</head>
+
+<div class="create">
+    <h2>Add New Book</h2>
+    </br>
+    </br>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @*<h4>BookTable_1</h4>
+            <hr />*@
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Time_Period, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <span class="control-label col-md-2">
+                    Time Period
+                </span>
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.Time_Period, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                    @Html.DropDownListFor(model => model.Time_Period,
+                  new List<SelectListItem> {
+                       new SelectListItem { Value = "Unknown", Text = "Select a Time Period"},
+                       new SelectListItem { Value = "17th Century or Earlier", Text = "17th Century or Earlier"},
+                       new SelectListItem { Value = "18th Century", Text="18th Century" },
+                       new SelectListItem { Value = "19th Century", Text="19th Century" },
+                       new SelectListItem { Value = "Early 20th Century", Text="Early 20th Century" }
+                    }, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(model => model.Time_Period, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ImageURL, new
+           {
+               htmlAttributes = new
+               {
+                   @class = "form-control",
+                   placeholder = "http://example.com/image.jpg"
+               }
+           })
+                    @Html.ValidationMessageFor(model => model.ImageURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                    @Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "btn btn-default" })
+                </div>
+            </div>
+        </div>
+    }
+
+    @*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,113 @@
+﻿@model ClassicBookCollection.Models.BookTable_1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <title>Details</title>
+    <link href="~/Content/detailsStyle.css" rel="stylesheet" />
+</head>
+
+    @*<h2>Details</h2>*@
+
+    @*<h4>BookTable_1</h4>*@
+    @*<hr />*@
+
+    <div class="details">
+        <h2>@Html.DisplayFor(model => model.Title)</h2>
+        <img src="@Url.Content(Model.ImageURL)" height="100" />
+       
+
+        @if (Model.Author != null)
+        {
+            <br />
+            <p><i>By&nbsp </i>@Html.DisplayFor(model => model.Author)</p>
+            @*<hr />*@
+        }
+        @if (Model.Time_Period != null)
+        {
+            <p><i>Written in</i> the @Html.DisplayFor(model => model.Time_Period)</p>
+            @*<hr />*@
+        }
+
+        @if (Model.Genre != null)
+        {
+            <p><i>Genre: </i>@Html.DisplayFor(model => model.Genre)</p>
+            @*<hr />*@
+        }
+        @if (Model.Description != null)
+        {
+            <p class="description">@Html.DisplayFor(model => model.Description)</p>
+        }
+
+
+    
+    </div>
+    @*<dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ImageURL)
+                </dt>
+
+                <dd>
+
+                    <img src="@Url.Content(Model.ImageURL)" height="100" />
+                    @Html.DisplayFor(model => model.ImageURL)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Author)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Author)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Time_Period)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Time_Period)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Genre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+
+
+            </dl>
+        </div>*@
+
+    <br />
+    <div class="linksDetails">
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Back to List", "Index", new { id = Model.Id }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Delete record", "Delete", new { id = Model.Id }, new { @class = "btn btn-default" })
+
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index") |
+            @Html.ActionLink("Delete record", "Delete", new { id = Model.Id })*@
+        </p>
+    </div>

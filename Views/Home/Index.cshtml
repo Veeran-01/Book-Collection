@@ -1,0 +1,116 @@
+﻿@*add IEnumerable so you can enumerate through model data- i.e. use a foreach loop*@
+@model IEnumerable<ClassicBookCollection.Models.BookTable_1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@***********
+    First Page
+    ***********@
+
+
+<div class="page-header text-center">
+    <h1>Historical fiction</h1>
+</div>
+
+    @*to sort book by genre and/or title*@
+    @using (Html.BeginForm())
+    {
+        <p>
+            <div class="form-inline ">
+                
+                    @*To search title or author*@
+                &nbsp&nbsp @Html.TextBox("searchString", null, new { @class = "form-control", placeholder = "search title or author" })
+                        <input type="submit" value="Search" class="btn btn-default" /> |
+                        @Html.ActionLink("Add New Book", "Create", new { area = "" }, new { @class = "btn btn-default" })
+                    </div>
+                    @*link at top of page to add a new book*@
+                    @*@Html.ActionLink("Add book", "Create", null, new { @class = "btn btn-success" })*@
+                
+            
+        </p>
+    }
+
+
+    @*List of all book and details*@
+    <table class="table">
+        <tr class="table-header">
+
+            @*<th class="text-center ">
+                @Html.DisplayNameFor(model => model.ImageURL)
+            </th>*@
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Title)
+
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Author)
+
+            </th>
+            <th class="text-center">
+                @*@Html.DisplayNameFor(model => model.Time_Period)*@
+
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Time Period
+                        @*@Html.EnumDropDownListFor(model => model.WeekDay, "Please Select A Day", new { @class = "form-control" })*@
+                        @Html.DropDownList("bookTimePeriod", null, "All Time Periods", new { onchange = "this.form.submit()", @class = "form-control" })
+                        @*@Html.DropDownList("bookTimePeriod", "All Time Periods") <input type="submit" value="Filter" />*@
+
+                    </p>
+
+                }
+            </th>
+            <th class="text-center">
+                @*@Html.DisplayNameFor(model => model.Genre)*@
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Genre
+                        @*@Html.DropDownList("bookGenre", "Genre") <input type="submit" value="Filter" />*@
+                        @Html.DropDownList("bookGenre", null, "All Genres", new { onchange = "this.form.submit()", @class = "form-control" })
+                    </p>
+
+                }
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td class="text-center">
+                    <img src="@Url.Content(item.ImageURL)" height="100" />
+                </td>*@
+                <td class="text-center">
+                    @Html.DisplayFor(m => item.Title)       @*want it to display all book titles, release dates, genres and prices*@<br /><br />
+                    <img src="@Url.Content(item.ImageURL)" height="150" />
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(m => item.Author)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(m => item.Time_Period)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(m => item.Genre)
+                </td>
+                <td class="text-center">
+                    @*Links to Edit, Show Details, and delete for each book*@
+                    @Html.ActionLink("Edit record", "Edit", new { id = item.Id }, new { @class = "btn btn-default" })
+                    <br />
+                    @Html.ActionLink("Details of record", "Details", new { id = item.Id }, new { @class = "btn btn-default" })
+
+                    @*Hide delete button on details page
+                        @Html.ActionLink("Delete record", "Delete", new { id = item.Id })*@
+                </td>
+            </tr>}
+
+</table>
