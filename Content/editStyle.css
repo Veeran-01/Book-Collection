@@ -1,0 +1,27 @@
+﻿body {
+    /*background-image: url('images/book.jpg');*/
+    background-image: url('images/notebook-1587526_1280.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.edit{
+    /*padding-bottom:10px;
+    padding-top:10px;*/
+    padding: 10px;
+    /*background-color:rgba(224, 216, 201, 0.58);*/
+}
+
+footer {display:none;}
+
+h2{
+    text-align:center;
+}
+
+.form-horizontal .control-label {
+    font-weight: bold;
+}
+
+.body-content {
+    background: none;
+}

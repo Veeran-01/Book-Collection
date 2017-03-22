@@ -1,0 +1,138 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: rgba(255, 255, 255, 0.23);
+
+
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+h1{
+    color:black;
+    font-family: 'Great Vibes', cursive;
+    /*font-family: 'Lobster Two', cursive;*/
+    font-size: 100px;
+    text-shadow:3px -2px 2px white;
+}
+
+body {
+    /*background-color: rgba(135, 181, 166, 0.47);*/
+    /*background-image: url('images/background-885434_640.png');*/
+    /*background-image: url('images/openPage.jpg');*/
+    /*background-image: url('images/book.jpg');*/
+    /*background-image: url('images/lightBackground.jpg');*/
+    /*background-image: url('images/booksStacked.jpg');
+    background-image: url('images/blackAndWhiteBook.jpg');*/
+    /*background-image: url('images/book1.jpg');*/
+    background-image: url('images/bookshelves-932780_1920.jpg');
+    /*background-image: url('images/paper-1328856_1920.jpg');*/
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    /*background-image:url("~/Content/images/bookImage.jpg");*/
+}
+
+.table{
+    
+    /*background-color: rgb(238, 238, 238);*/
+    /*background-color: rgba(224, 216, 201, 0.58);*/
+   /*background-color:rgba(255, 255, 255, 0.6);*/
+   background-color:rgba(255, 255, 255, 0.45);
+   
+}
+
+input, select, textarea {
+    max-width: 600px;
+}
+
+.form-inline{
+    /*background-color: rgb(238, 238, 238);*/
+    /*font-family: 'Great Vibes', cursive;*/
+    /*font-family: 'Sansita', sans-serif;*/
+    /*font-family: 'Jim Nightshade', cursive;*/
+    /*font-family: 'Lobster Two', cursive;*/
+    /*font-family: 'Enriqueta', serif;*/
+    font-family: 'Cairo', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size:x-large;
+}
+
+input#searchString.form-control{
+    font-size:large;
+}
+
+.btn{
+    font-size: 16px;
+    margin-bottom: 3px;
+
+}
+
+.table thead>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td{
+    vertical-align:middle;
+    /*font-family: 'Sansita', sans-serif;*/
+    /*font-family: 'Jim Nightshade', cursive;*/
+    /*font-family: 'Lobster Two', cursive;*/
+    /*font-family: 'Enriqueta', serif;*/
+    font-family: 'Cairo', sans-serif;
+    font-weight:bold;
+    color: black;
+}
+
+th{
+    font-size:large;
+    /*font-family: 'Sansita', sans-serif;*/
+    /*font-family: 'Jim Nightshade', cursive;*/
+    /*font-family: 'Lobster Two', cursive;*/
+    /*font-family: 'Enriqueta', serif;*/
+    font-family: 'Cairo', sans-serif;
+    color: black;
+}
+
+.links{
+    /*background-color:rgba(224, 216, 201, 0.58);*/
+    text-align:center;
+}
+
+
+
+footer{
+    color: white;
+}
+
+
+
+.table thead>tr>th{
+    vertical-align:top;
+}
+
+input#searchString.form-control {
+    box-shadow: -1px 1px 8px 0px black;
+}
+
+.btn  {
+       box-shadow: -1px 1px 8px 0px black;
+}
+
+.form-control {
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: -1px 1px 8px 0px black;
+}
+
+img {
+    box-shadow: 1px -2px 14px 0px black;
+}

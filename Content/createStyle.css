@@ -1,0 +1,31 @@
+﻿body {
+    /*background-image: url('images/book.jpg');*/
+    /*background-image: url('images/createImage.jpg');*/
+    background-image: url('images/notebook-1587526_1280.jpg');
+    /*background-image: url('images/openPage.jpg');*/
+    background-size: cover;
+    background-position: center;
+}
+
+.create{
+    padding: 10px;
+    /*background-color:rgba(224, 216, 201, 0.58);*/
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+h2{
+    text-align:center;
+}
+
+footer {display:none;}
+
+.body-content {
+    background: none;
+}
+
+.form-control {
+    text-align: left;
+}
